@@ -18,15 +18,8 @@
         <tr>
           <td>Отдаете</td>
           <td>
-            <select id="fromPaySystem" name="fromPaySystem">
-              <option value="YandexMoneyRUB">Яндекс.Деньги РУБ</option>
-              <option value="ZCash">ZCash</option>
-              <option value="DASH">DASH</option>
-              <option value="Litecoin">Лайткоин</option>
-              <option value="Ethereum">Эфириум</option>
-              <option value="CashEUR">Наличные EUR</option>
-              <option value="CashAED">Наличные AED в ОАЭ</option>
-              <option value="WUUSD">Western Union USD</option>
+            <select >
+                <option *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
             </select>
           </td>
           <td><input maxlength="16" name="fromAmount" placeholder="≥ 50 RUB"/></td>
@@ -39,15 +32,8 @@
         <tr>
           <td>Отдаете</td>
           <td>
-            <select>
-              <option value="YandexMoneyRUB">Яндекс.Деньги РУБ</option>
-              <option value="ZCash">ZCash</option>
-              <option value="DASH">DASH</option>
-              <option value="Litecoin">Лайткоин</option>
-              <option value="Ethereum">Эфириум</option>
-              <option value="CashEUR">Наличные EUR</option>
-              <option value="CashAED">Наличные AED в ОАЭ</option>
-              <option value="WUUSD">Western Union USD</option>
+            <select >
+              <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">{{curensy.name}}</option>
             </select>
           </td>
           <td><input maxlength="16" placeholder="≥ 50 RUB"/></td>

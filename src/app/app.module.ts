@@ -6,6 +6,8 @@ import { ExchangerComponent } from './exchanger/exchanger.component';
 import { FormSendComponent } from './form-send/form-send.component';
 import {Routes, RouterModule} from "@angular/router";
 
+import {FormExchangerService} from "./shared/form-exchanger.service"
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -28,7 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [FormExchangerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
