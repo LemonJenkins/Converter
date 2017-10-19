@@ -1,0 +1,151 @@
+.content{
+  float: left;
+  width: 100%;
+  font-family: "PT Sans", sans-serif;
+}
+
+.reserve{
+  float: left;
+  width: 100%;
+  height: 348px;
+  margin: 20px 0 0 0;
+  padding-top: 20px;
+  background: url(https://utbs.ws/images/reserves.jpg) center center no-repeat;
+}
+
+.exchange{
+  text-align: center;
+  width: 998px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0 10px 0;
+  border: 1px solid #ffbfa3;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0 #e8f1f4;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+  color: #ff4e00;
+}
+
+table {
+  display: table;
+  border-spacing: 2px;
+  border-color: grey;
+  width: 858px;
+  border-collapse: collapse;
+  margin: 40px 70px 10px;
+}
+
+td{
+  color: #525763;
+  text-align: center;
+}
+tr{
+  color: #525763;
+  text-align: center;
+}
+
+.reserve .exchange{
+  height: 35%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve table{
+  float: left;
+  width: 30%;
+  margin: 0 10% 0 10%;
+}
+
+.reserve th{
+  font-size: 16px;
+  color: #ff4e00;
+  text-align: left;
+  padding: 5px;
+}
+
+.reserve td{
+  margin: 0 0 0 0;
+  color: #525763;
+  text-align: left;
+}
+
+.reserve tr{
+  color: #525763;
+  align:"center";
+  text-align: left;
+}
+
+select{
+  width: 340px;
+  height: 40px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  margin: 5px 0 0 0;
+  color: #636f7b;
+  border: 1px solid #c2dee7;
+  background: #c2dee7;
+  border-radius: 20px;
+  padding: 0.4em 2.1em 0.4em 1em;
+  position: relative;
+  display: inline-block;
+
+}
+select:hover{
+  color: #7e8791;
+  border: 1px solid #d9eaef;
+  background: #d9eaef;
+}
+
+
+option:hover{
+  color: #7e8791;
+  border: 1px solid #d9eaef;
+  background: #d9eaef;
+}
+
+input{
+  float: left;
+  width: 205px;
+  height: 33px;
+  border: 2px solid #c2dee7;
+  background: #c2dee7;
+  border-radius: 20px;
+  color: #636f7b;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+input:hover{
+  background-color: #ffffff;
+  color: #7e8791;
+}
+
+button{
+  background: #525763;
+  border: none;
+  border-radius: 20px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #dddddd;
+}
+
+.small-img{
+  width: 24px;
+  height: 24px;
+}
+

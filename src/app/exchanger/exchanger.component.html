@@ -1,0 +1,129 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="content">
+  <div class="exchange">
+    <h1>
+      <img src="https://utbs.ws/images/calculator.png">
+      <span>
+        Обмен
+        <samp>ЧТО_ТО</samp>
+         на
+        <samp>ЧТО_ТО</samp>
+         по выгодному курсу
+      </span>
+    </h1>
+    <form>
+      <table>
+        <tbody>
+
+        <tr>
+          <td>Отдаете</td>
+          <td>
+            <select id="fromPaySystem" name="fromPaySystem">
+              <option value="YandexMoneyRUB">Яндекс.Деньги РУБ</option>
+              <option value="ZCash">ZCash</option>
+              <option value="DASH">DASH</option>
+              <option value="Litecoin">Лайткоин</option>
+              <option value="Ethereum">Эфириум</option>
+              <option value="CashEUR">Наличные EUR</option>
+              <option value="CashAED">Наличные AED в ОАЭ</option>
+              <option value="WUUSD">Western Union USD</option>
+            </select>
+          </td>
+          <td><input maxlength="16" name="fromAmount" placeholder="≥ 50 RUB"/></td>
+          <td><img width="48" height="48" alt="" src="https://utbs.ws/images/YandexMoneyRUB.png"/></td>
+          <td rowspan="2">
+            <a id="switch" href="javascript:void(0)"><img alt="" src="https://utbs.ws/images/switch.png"/></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Отдаете</td>
+          <td>
+            <select>
+              <option value="YandexMoneyRUB">Яндекс.Деньги РУБ</option>
+              <option value="ZCash">ZCash</option>
+              <option value="DASH">DASH</option>
+              <option value="Litecoin">Лайткоин</option>
+              <option value="Ethereum">Эфириум</option>
+              <option value="CashEUR">Наличные EUR</option>
+              <option value="CashAED">Наличные AED в ОАЭ</option>
+              <option value="WUUSD">Western Union USD</option>
+            </select>
+          </td>
+          <td><input maxlength="16" placeholder="≥ 50 RUB"/></td>
+          <td><img width="48" height="48" alt="" src="https://utbs.ws/images/ZCash.png"/></td>
+        </tr>
+
+        </tbody>
+      </table>
+      <button type="submit">Укажите сумму обмена</button>
+      <table>
+        <tr>
+          <td ><img src="https://utbs.ws/images/reserve.png"></td>
+          <td><img src="https://utbs.ws/images/rate.png"></td>
+          <td><img src="https://utbs.ws/images/reverse_rate.png"></td>
+        </tr>
+        <tr>
+          <th>Резерв:</th>
+          <th>Курс Яндекс.Деньги РУБ к ZCash:</th>
+          <th>Обр. курс:</th>
+        </tr>
+        <tr>
+          <td>778.19 ZEC</td>
+          <td>1 ZEC = 13897.5742 RUB</td>
+          <td>1 RUB = 0.000072 ZEC</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="reserve">
+    <h1 style="color: white"><img src="https://utbs.ws/images/reserves_header.png">Резервы</h1>
+    <div class="exchange" style="background-color: white; box-shadow: 0 0 0 0;">
+      <table>
+        <tr>
+          <td></td>
+          <th>Валюта</th>
+          <th>Резерв</th>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/ZCash.png" class="small-img"></td>
+          <td>ZCash</td>
+          <td>4.16 ZEC</td>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/DASH.png" class="small-img"></td>
+          <td>DASH</td>
+          <td>0.21 DASH</td>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/Litecoin.png" class="small-img"></td>
+          <td>Лайткоин</td>
+          <td>0.01 LTC</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td></td>
+          <th>Валюта</th>
+          <th>Резерв</th>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/ZCash.png" class="small-img"></td>
+          <td>ZCash</td>
+          <td>4.16 ZEC</td>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/DASH.png" class="small-img"></td>
+          <td>DASH</td>
+          <td>0.21 DASH</td>
+        </tr>
+        <tr>
+          <td><img src="https://utbs.ws/images/Litecoin.png" class="small-img"></td>
+          <td>Лайткоин</td>
+          <td>0.01 LTC</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
