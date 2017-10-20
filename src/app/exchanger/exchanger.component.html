@@ -1,13 +1,12 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="content">
   <div class="exchange">
     <h1>
-      <img src="https://utbs.ws/images/calculator.png">
+      <img src="/assets/calculator.png">
       <span>
         Обмен
-        <samp>ЧТО_ТО</samp>
+        <samp>{{givNameValut}}</samp>
          на
-        <samp>ЧТО_ТО</samp>
+        <samp>{{getNameValut}}</samp>
          по выгодному курсу
       </span>
     </h1>
@@ -16,54 +15,57 @@
         <tbody>
 
         <tr>
-          <td>Отдаете</td>
+          <th>Отдаете</th>
           <td>
-            <select >
-                <option *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
+            <select id="givSelect" (change)="setGivValut(give.value)" #give>
+              <option name="give" *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
             </select>
           </td>
-          <td><input maxlength="16" name="fromAmount" placeholder="≥ 50 RUB"/></td>
-          <td><img width="48" height="48" alt="" src="https://utbs.ws/images/YandexMoneyRUB.png"/></td>
+          <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)" maxlength="3"
+                     placeholder="≥ 3 {{givNameValut}}" name="getV" required/></td>
+          <td><img width="48" height="48" alt="" src="{{giveValutImg}}"/></td>
           <td rowspan="2">
-            <a id="switch" href="javascript:void(0)"><img alt="" src="https://utbs.ws/images/switch.png"/></a>
+            <a (click)="switcher()"><img src="/assets/switch.png"/></a>
           </td>
         </tr>
 
         <tr>
-          <td>Отдаете</td>
+          <th>Получаете</th>
           <td>
-            <select >
-              <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">{{curensy.name}}</option>
+            <select id="getSelect" (change)="setGetValut(get.value)" #get>
+              <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">
+                {{curensy.name}}
+              </option>
             </select>
           </td>
-          <td><input maxlength="16" placeholder="≥ 50 RUB"/></td>
-          <td><img width="48" height="48" alt="" src="https://utbs.ws/images/ZCash.png"/></td>
+          <td><input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}"/></td>
+          <td><img width="48" height="48" alt="" src="{{getValutImg}}" id="getMoney"/></td>
         </tr>
 
         </tbody>
       </table>
       <button type="submit">Укажите сумму обмена</button>
-      <table>
-        <tr>
-          <td ><img src="https://utbs.ws/images/reserve.png"></td>
-          <td><img src="https://utbs.ws/images/rate.png"></td>
-          <td><img src="https://utbs.ws/images/reverse_rate.png"></td>
-        </tr>
-        <tr>
-          <th>Резерв:</th>
-          <th>Курс Яндекс.Деньги РУБ к ZCash:</th>
-          <th>Обр. курс:</th>
-        </tr>
-        <tr>
-          <td>778.19 ZEC</td>
-          <td>1 ZEC = 13897.5742 RUB</td>
-          <td>1 RUB = 0.000072 ZEC</td>
-        </tr>
-      </table>
     </form>
+    <table>
+      <tr>
+        <td><img src="/assets/reserve.png"></td>
+        <td><img src="/assets/rate.png"></td>
+        <td><img src="/assets/reverse_rate.png"></td>
+      </tr>
+      <tr>
+        <th>Резерв:</th>
+        <th>Курс {{givNameValut}} к {{getNameValut}}:</th>
+        <th>Обр. курс:</th>
+      </tr>
+      <tr>
+        <td>{{reservGetValut}} {{getNameValut}}</td>
+        <td>1 {{givNameValut}} = {{currentRate}} {{getNameValut}}</td>
+        <td>1 {{getNameValut}} = {{reverseCourse}} {{givNameValut}}</td>
+      </tr>
+    </table>
   </div>
   <div class="reserve">
-    <h1 style="color: white"><img src="https://utbs.ws/images/reserves_header.png">Резервы</h1>
+    <h1 style="color: white"><img src="/assets/reserves_header.png">Резервы</h1>
     <div class="exchange" style="background-color: white; box-shadow: 0 0 0 0;">
       <table>
         <tr>

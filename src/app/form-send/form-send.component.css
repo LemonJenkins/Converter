@@ -1,28 +1,24 @@
 .content {
   width: 100%;
-  font-family: "PT Sans", sans-serif;
+  max-width: 1000px;
+  padding: 40px 20px;
+  margin: auto;
 }
 
 .exchange {
-  width: calc(100% - 352px);
+  width: 100%;
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 20px 0% 20px 0%;
+  margin: 0 auto;
+  padding: 20px 0;
   border: 1px solid #ffbfa3;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 #e8f1f4;
 }
 
 .exchange-rates {
-  width: 84%;
-  height: 66px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 0 10px 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 0;
   border: 1px solid #ffbfa3;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 #e8f1f4;
@@ -32,15 +28,23 @@
   background: url("https://utbs.ws/images/process_new/calculator.png");
   width: 744px;
   height: 100%;
-  margin-top: 40px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 0 0px 20px;
+  padding: 10px 20px;
   border-radius: 10px;
 }
 
+.exchange-field img {
+  vertical-align: middle;
+  margin-left: 50px;
+}
+
+.exchange-field input {
+  vertical-align: middle;
+}
+
 h1 {
-  font-family: "PT Sans", sans-serif;
   font-size: 32px;
   margin: 0;
   text-align: center;
@@ -48,8 +52,6 @@ h1 {
 }
 
 p {
-  font-family: "PT Sans", sans-serif;
-  float: left;
   width: auto;
   font-size: 18px;
   color: #525763;
@@ -58,18 +60,15 @@ p {
 }
 
 input {
-  float: left;
   width: 205px;
   height: 33px;
   border: 2px solid #c2dee7;
   background: #c2dee7;
   border-radius: 20px;
   color: #636f7b;
-  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-bottom: 20px;
 }
 
 input:hover {
@@ -77,8 +76,8 @@ input:hover {
   color: #7e8791;
 }
 
-.text{
-  float: left;
+.text {
+  display: inline-block;
   width: 100%;
   font-size: 14px;
   font-weight: bold;
@@ -87,11 +86,10 @@ input:hover {
   margin-top: 10px;
 }
 
-button{
+button {
   background: #525763;
   border: none;
   border-radius: 20px;
-  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   color: #ffffff;
   margin-top: 10px;
@@ -100,6 +98,35 @@ button{
   margin-left: 44%;
 }
 
-button:hover{
+button:hover {
   background-color: #ff4e00;
+}
+
+span {
+  margin: 0 0 0 30px;
+  display: inline-block;
+  padding: 0 0 0 40px;
+  line-height: 66px;
+}
+
+.form {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-field + .form-field {
+  margin-top: 20px;
+}
+
+.form-field > label {
+  display: inline-block;
+  width: 170px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.form-field > input {
+  width: calc(600px - 190px);
+  vertical-align: middle;
 }

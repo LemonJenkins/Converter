@@ -3,19 +3,13 @@
  */
 export class Currency {
   name:string;
-  purchaseY:number;
-  purchaseP:number;
-  purchaseE:number;
-  sale:number;
+  img: string;
   reserve:number;
 
 
-  constructor(name: string, purchaseY: number, purchaseP: number, purchaseE: number, sale: number, reserve: number) {
+  constructor(name: string, img: string, reserve: number) {
     this.name = name;
-    this.purchaseY = purchaseY;
-    this.purchaseP = purchaseP;
-    this.purchaseE = purchaseE;
-    this.sale = sale;
+    this.img = img;
     this.reserve = reserve;
   }
 }

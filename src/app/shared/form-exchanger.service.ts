@@ -6,37 +6,49 @@ export class FormExchangerService {
 
   constructor() { }
 
+private P24 : Currency = new Currency("Privat24",'https://utbs.ws/images/YandexMoneyRUB.png',2562);
+private EUR : Currency = new Currency("Наличные EUR",'https://utbs.ws/images/CashEUR.png',10000);
+private YAND : Currency = new Currency("Privat24",'https://utbs.ws/images/YandexMoneyRUB.png',2562);
 
-  private _currencys : Currency[] =[
-    {
-      name:"YandexMoneyRUB",
-      purchaseY:1,
-      purchaseP:2.3,
-      purchaseE:3.4,
-      sale:1,
-      reserve:221
+  private currencies: Currency[] = [
+     {
+      name: 'Privat24',
+      img: '/assets/unnamed.png',
+       reserve: 2555
     },
     {
-      name:"EUR",
-      purchaseY:15,
-      purchaseP:26,
-      purchaseE:1,
-      sale:1,
-      reserve:548
+      name: 'EUR',
+      img: '/assets/CashEUR.png',
+      reserve: 3536
     },
     {
-      name:"Privat24",
-      purchaseY:0.3,
-      purchaseP:1,
-      purchaseE:0.5,
-      sale:1,
-      reserve:247
-    },
-  ]
+      name: 'YandexD',
+      img: '/assets/YandexMoneyRUB.png',
+      reserve: 6666
+    }
+  ];
+
+  private exchangeRates: any = {
+    Privat24_Privat24:1,
+    EUR_EUR: 1,
+    YandexD_YandexD: 1,
+    Privat24_EUR: 0.26,
+    Privat24_YandexD: 5,
+    EUR_Privat24: 26,
+    EUR_YandexD: 10,
+    YandexD_Privat24: 0.2,
+    YandexD_EUR: 0.01,
+
+  };
 
 
-  getCurrencys(): Currency[] {
-    return this._currencys;
+
+  getCurrencies() {
+    return this.currencies;
   }
 
+
+  getExchangeRates() {
+    return this.exchangeRates;
+  }
 }
