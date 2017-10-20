@@ -1,20 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Currency} from "./Currency";
 
 @Injectable()
 export class FormExchangerService {
 
-  constructor() { }
+  constructor() {
+  }
 
-private P24 : Currency = new Currency("Privat24",'https://utbs.ws/images/YandexMoneyRUB.png',2562);
-private EUR : Currency = new Currency("Наличные EUR",'https://utbs.ws/images/CashEUR.png',10000);
-private YAND : Currency = new Currency("Privat24",'https://utbs.ws/images/YandexMoneyRUB.png',2562);
+
 
   private currencies: Currency[] = [
-     {
+    {
       name: 'Privat24',
       img: '/assets/unnamed.png',
-       reserve: 2555
+      reserve: 2555
     },
     {
       name: 'EUR',
@@ -29,7 +28,7 @@ private YAND : Currency = new Currency("Privat24",'https://utbs.ws/images/Yandex
   ];
 
   private exchangeRates: any = {
-    Privat24_Privat24:1,
+    Privat24_Privat24: 1,
     EUR_EUR: 1,
     YandexD_YandexD: 1,
     Privat24_EUR: 0.26,
@@ -40,7 +39,6 @@ private YAND : Currency = new Currency("Privat24",'https://utbs.ws/images/Yandex
     YandexD_EUR: 0.01,
 
   };
-
 
 
   getCurrencies() {

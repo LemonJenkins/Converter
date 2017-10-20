@@ -10,42 +10,42 @@
          по выгодному курсу
       </span>
     </h1>
-    <form>
-      <table>
-        <tbody>
+    <table>
+      <tbody>
 
-        <tr>
-          <th>Отдаете</th>
-          <td>
-            <select id="givSelect" (change)="setGivValut(give.value)" #give>
-              <option name="give" *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
-            </select>
-          </td>
-          <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)" maxlength="3"
-                     placeholder="≥ 3 {{givNameValut}}" name="getV" required/></td>
-          <td><img width="48" height="48" alt="" src="{{giveValutImg}}"/></td>
-          <td rowspan="2">
-            <a (click)="switcher()"><img src="/assets/switch.png"/></a>
-          </td>
-        </tr>
+      <tr>
+        <th>Отдаете</th>
+        <td>
+          <select id="givSelect" (change)="setGivValut(give.value)" #give>
+            <option name="give" *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
+          </select>
+        </td>
+        <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)" maxlength="3"
+                   placeholder="≥ 3 {{givNameValut}}" name="getV" required/></td>
+        <td><img width="48" height="48" alt="" src="{{giveValutImg}}"/></td>
+        <td rowspan="2">
+          <a (click)="switcher()"><img src="/assets/switch.png"/></a>
+        </td>
+      </tr>
 
-        <tr>
-          <th>Получаете</th>
-          <td>
-            <select id="getSelect" (change)="setGetValut(get.value)" #get>
-              <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">
-                {{curensy.name}}
-              </option>
-            </select>
-          </td>
-          <td><input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}"/></td>
-          <td><img width="48" height="48" alt="" src="{{getValutImg}}" id="getMoney"/></td>
-        </tr>
-
-        </tbody>
-      </table>
+      <tr>
+        <th>Получаете</th>
+        <td>
+          <select id="getSelect" (change)="setGetValut(get.value)" #get>
+            <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">
+              {{curensy.name}}
+            </option>
+          </select>
+        </td>
+        <td><input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}"/></td>
+        <td><img width="48" height="48" alt="" src="{{getValutImg}}" id="getMoney"/></td>
+      </tr>
+      </tbody>
+    </table>
+    <a
+      href="/form?givNameValut={{givNameValut}}&getNameValut={{getNameValut}}&givValueM={{givValueM}}&getValueM={{getValueM}}">
       <button type="submit">Укажите сумму обмена</button>
-    </form>
+    </a>
     <table>
       <tr>
         <td><img src="/assets/reserve.png"></td>

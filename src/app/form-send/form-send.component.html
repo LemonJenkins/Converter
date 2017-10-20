@@ -1,23 +1,24 @@
 <div class="content">
   <div class="exchange">
-    <h1>Обмен ЧТО_ТО на ЧТО_ТО</h1>
+    <h1>Обмен {{givNameValut}} на {{getNameValut}};</h1>
     <div class="exchange-rates">
       <span style="background: url(https://utbs.ws/images/rate.png) 0 50% no-repeat;">
         <strong>Курс:</strong>
-        Лайткоин/Яндекс.Деньги РУБ = 3241.2839
+        {{givNameValut}}/{{getNameValut}} = {{currentRate}}
       </span>
       <span style="background: url(https://utbs.ws/images/reserve.png) 0 50% no-repeat;">
         <strong>Резерв:</strong>
-        97.45 Яндекс.Деньги РУБ
+        {{reservGetValut}} {{getNameValut}}
       </span>
     </div>
     <strong class="text">(может
       отличаться в момент завершения сделки в связи с изменением курсов валют)</strong>
     <div class="exchange-field">
-      <img src="https://utbs.ws/images/YandexMoneyRUB.png">
-      <input>
-      <img src="https://utbs.ws/images/ZCash.png">
-      <input>
+      <img class="small-img" src="{{giveValutImg}}">
+      <input [(ngModel)]="givV" (ngModelChange)="getValueMoney(givV)" maxlength="3"
+             placeholder="{{givValueM}}" id="givV">
+      <img class="small-img" src="{{getValutImg}}">
+      <input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}">
     </div>
     <strong class="text" style="color: red">
       ВНИМАНИЕ! Обмен осуществляется через 48 часов после поступления средств на наш кошелек Яндекс.Деньги</strong>
@@ -25,27 +26,27 @@
     <div class="form">
       <div class="form-field">
         <label>Счет Яндекс.Деньги</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <div class="form-field">
         <label>Адрес ZCash</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <div class="form-field">
         <label>Фамилия</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <div class="form-field">
         <label>Имя</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <div class="form-field">
         <label>E-Mail</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <div class="form-field">
         <label>Телефон</label>
-        <input type="text">
+        <input type="text" required>
       </div>
       <button type="submit">Отправить</button>
     </div>

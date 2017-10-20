@@ -18,7 +18,7 @@ export class ExchangerComponent implements OnInit {
   reservGetValut;
   givNameValut;
   getNameValut;
-  givValueM;
+  givValueM =0;
   getValueM;
   currentRate;
   reverseCourse;

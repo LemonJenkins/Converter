@@ -25,7 +25,7 @@
 }
 
 .exchange-field {
-  background: url("https://utbs.ws/images/process_new/calculator.png");
+  background: url("/assets/calculator (1).png");
   width: 744px;
   height: 100%;
   margin-top: 15px;
@@ -129,4 +129,9 @@ span {
 .form-field > input {
   width: calc(600px - 190px);
   vertical-align: middle;
+}
+
+.small-img {
+  width: 48px;
+  height: 48px;
 }
