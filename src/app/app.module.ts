@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {HashLocationStrategy} from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { ExchangerComponent } from './exchanger/exchanger.component';
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
   imports: [
     FormsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,{ useHash: true }),
   ],
   providers: [FormExchangerService],
   bootstrap: [AppComponent]

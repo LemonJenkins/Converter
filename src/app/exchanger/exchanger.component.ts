@@ -22,7 +22,8 @@ export class ExchangerComponent implements OnInit {
   getValueM = 0;
   currentRate;
   reverseCourse;
-  buttonSwitch = false;
+  buttonSwitch = false
+  getV:any;
 
   constructor(formService: FormExchangerService) {
     this.formService = formService;

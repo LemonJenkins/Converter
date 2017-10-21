@@ -7,6 +7,7 @@
 .reserve {
   float: left;
   width: 100%;
+  min-width:998px; 
   height: 448px;
   margin: 62px 0 50px 0;
   padding-top: 20px;

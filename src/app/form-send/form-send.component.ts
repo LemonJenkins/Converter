@@ -23,6 +23,8 @@ export class FormSendComponent implements OnInit {
   getValueM;
   currentRate;
   reverseCourse;
+  getV:any;
+  givV:any;
 
   constructor(formService: FormExchangerService, private route: ActivatedRoute) {
     this.formService = formService;
