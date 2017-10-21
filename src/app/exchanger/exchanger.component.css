@@ -7,8 +7,8 @@
 .reserve {
   float: left;
   width: 100%;
-  height: 348px;
-  margin: 20px 0 0 0;
+  height: 448px;
+  margin: 62px 0 50px 0;
   padding-top: 20px;
   background: url(/assets/reserves.jpg) center center no-repeat;
 }
@@ -19,7 +19,7 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 20px 0;
   border: 1px solid #ffbfa3;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 #e8f1f4;
@@ -30,6 +30,7 @@ h1 {
   margin: 0;
   text-align: center;
   color: #ff4e00;
+  vertical-align: middle;
 }
 
 table {
@@ -47,12 +48,14 @@ td {
 }
 
 tr {
+  font-size: 14px;
   color: #525763;
   text-align: center;
 }
 
 .reserve .exchange {
-  height: 50%;
+  height: 138px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -67,7 +70,6 @@ tr {
   font-size: 16px;
   color: #ff4e00;
   text-align: left;
-  padding: 5px;
 }
 
 .reserve td {
@@ -131,6 +133,11 @@ input:hover {
   color: #7e8791;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 button {
   background: #525763;
   border: none;
@@ -147,7 +154,11 @@ button:hover {
   background-color: #dddddd;
 }
 
-button:active{
+button:active {
+  background-color: #ff4e00;
+}
+
+.style-on-field {
   background-color: #ff4e00;
 }
 
@@ -156,3 +167,22 @@ button:active{
   height: 24px;
 }
 
+.form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-field > label {
+  margin-top: 1%;
+  display: inline-block;
+  width: 280px;
+  font-size: 16px;
+  vertical-align: middle;
+  color: #525763;
+}
+
+.form-field > img {
+  margin: 2% 12% 0 12%;
+  display: inline-block;
+  vertical-align: middle;
+}

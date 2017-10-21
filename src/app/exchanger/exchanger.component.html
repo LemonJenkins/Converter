@@ -12,7 +12,6 @@
     </h1>
     <table>
       <tbody>
-
       <tr>
         <th>Отдаете</th>
         <td>
@@ -20,8 +19,8 @@
             <option name="give" *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
           </select>
         </td>
-        <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)" maxlength="3"
-                   placeholder="≥ 3 {{givNameValut}}" name="getV" required/></td>
+        <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)"
+                   placeholder="≥ 3 {{givNameValut}}" name="getV" type="number"/></td>
         <td><img width="48" height="48" alt="" src="{{giveValutImg}}"/></td>
         <td rowspan="2">
           <a (click)="switcher()"><img src="/assets/switch.png"/></a>
@@ -37,35 +36,39 @@
             </option>
           </select>
         </td>
-        <td><input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}"/></td>
+
+        <td><input placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}" pattern="[0-9]"/></td>
         <td><img width="48" height="48" alt="" src="{{getValutImg}}" id="getMoney"/></td>
       </tr>
       </tbody>
     </table>
-    <a
-      href="/form?givNameValut={{givNameValut}}&getNameValut={{getNameValut}}&givValueM={{givValueM}}&getValueM={{getValueM}}">
-      <button type="submit">Укажите сумму обмена</button>
+    <a *ngIf="buttonSwitch"
+       href="/form?givNameValut={{givNameValut}}&getNameValut={{getNameValut}}&givValueM={{givValueM}}&getValueM={{getValueM}}">
+      <button type="submit" [ngClass]="{'style-on-field': true}">Обмен {{givNameValut}}
+        {{givValueM}} на {{getValueM}} {{getNameValut}}
+      </button>
     </a>
-    <table>
-      <tr>
-        <td><img src="/assets/reserve.png"></td>
-        <td><img src="/assets/rate.png"></td>
-        <td><img src="/assets/reverse_rate.png"></td>
-      </tr>
-      <tr>
-        <th>Резерв:</th>
-        <th>Курс {{givNameValut}} к {{getNameValut}}:</th>
-        <th>Обр. курс:</th>
-      </tr>
-      <tr>
-        <td>{{reservGetValut}} {{getNameValut}}</td>
-        <td>1 {{givNameValut}} = {{currentRate}} {{getNameValut}}</td>
-        <td>1 {{getNameValut}} = {{reverseCourse}} {{givNameValut}}</td>
-      </tr>
-    </table>
+    <button *ngIf="!buttonSwitch" type="submit">Укажите сумму обмена</button>
+    <div class="form">
+      <div class="form-field">
+        <img src="/assets/reserve.png">
+        <img src="/assets/rate.png">
+        <img src="/assets/reverse_rate.png">
+      </div>
+      <div class="form-field">
+        <label><strong>Резерв:</strong></label>
+        <label><strong>Курс {{givNameValut}} к {{getNameValut}}:</strong></label>
+        <label><strong>Обр. курс:</strong></label>
+      </div>
+      <div class="form-field">
+        <label>{{reservGetValut}} {{getNameValut}}</label>
+        <label>1 {{givNameValut}} = {{currentRate}} {{getNameValut}}</label>
+        <label>1 {{getNameValut}} = {{reverseCourse}} {{givNameValut}}</label>
+      </div>
+    </div>
   </div>
   <div class="reserve">
-    <h1 style="color: white"><img src="/assets/reserves_header.png">Резервы</h1>
+    <h1 style="color: white"><img src="/assets/reserves_header.png" style="vertical-align: middle;">Резервы</h1>
     <div class="exchange" style="background-color: white; box-shadow: 0 0 0 0;">
       <table>
         <tr>
@@ -113,5 +116,4 @@
       </table>
     </div>
   </div>
-
 </div>

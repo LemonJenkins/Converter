@@ -18,10 +18,11 @@ export class ExchangerComponent implements OnInit {
   reservGetValut;
   givNameValut;
   getNameValut;
-  givValueM =0;
-  getValueM;
+  givValueM;
+  getValueM = 0;
   currentRate;
   reverseCourse;
+  buttonSwitch = false;
 
   constructor(formService: FormExchangerService) {
     this.formService = formService;
@@ -72,6 +73,10 @@ export class ExchangerComponent implements OnInit {
       x = 0;
     }
     this.getValueM = money * x;
+    this.buttonSwitch = true;
+    if (this.getValueM == 0) {
+      this.buttonSwitch = false;
+    }
   }
 
   switcher() {
