@@ -68,15 +68,17 @@ export class ExchangerComponent implements OnInit {
     this.givValueM = money;
     let x;
     let rate = this.givNameValut + "_" + this.getNameValut;
-    if (!isUndefined(this.exchangeRates[rate])) {
-      x = this.exchangeRates[rate];
-    } else {
-      x = 0;
-    }
-    this.getValueM = money * x;
-    this.buttonSwitch = true;
-    if (this.getValueM == 0) {
-      this.buttonSwitch = false;
+    if(!isUndefined(this.givValueM)) {
+      if (!isUndefined(this.exchangeRates[rate])) {
+        x = this.exchangeRates[rate];
+      } else {
+        x = 0;
+      }
+      this.getValueM = money * x;
+      this.buttonSwitch = true;
+      if (this.getValueM == 0) {
+        this.buttonSwitch = false;
+      }
     }
   }
 
