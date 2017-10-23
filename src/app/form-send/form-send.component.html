@@ -2,11 +2,11 @@
   <div class="exchange">
     <h1>Обмен {{givNameValut}} на {{getNameValut}};</h1>
     <div class="exchange-rates">
-      <span style="background: url(https://utbs.ws/images/rate.png) 0 50% no-repeat;">
+      <span style="background: url(/assets/rate.png) 0 50% no-repeat;">
         <strong>Курс:</strong>
         {{givNameValut}}/{{getNameValut}} = {{currentRate}}
       </span>
-      <span style="background: url(https://utbs.ws/images/reserve.png) 0 50% no-repeat;">
+      <span style="background: url(/assets/reserve.png) 0 50% no-repeat;">
         <strong>Резерв:</strong>
         {{reservGetValut}} {{getNameValut}}
       </span>
@@ -15,40 +15,51 @@
       отличаться в момент завершения сделки в связи с изменением курсов валют)</strong>
     <div class="exchange-field">
       <img class="small-img" src="{{giveValutImg}}">
-      <input [(ngModel)]="givV" (ngModelChange)="getValueMoney(givV)" maxlength="3"
-             placeholder="{{givValueM}}" id="givV">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="givV" (ngModelChange)="getValueMoney(givV)"
+               placeholder="{{givNameValut}}" value="givValueM" name="getV" type="number" required>
+      </mat-form-field>
       <img class="small-img" src="{{getValutImg}}">
-      <input maxlength="16" placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="getV"
+               placeholder="{{getNameValut}}" value="{{getValueM}}" type="number" required>
+      </mat-form-field>
     </div>
     <strong class="text" style="color: red">
       ВНИМАНИЕ! Обмен осуществляется через 48 часов после поступления средств на наш кошелек Яндекс.Деньги</strong>
     <strong class="text" style="margin-top: 30px; font-size: 20px; margin-bottom: 20px;">РЕКВИЗИТЫ</strong>
     <div class="form">
       <div class="form-field">
-        <label>Счет Яндекс.Деньги</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Счет Яндекс.Деньги" required>
+        </mat-form-field>
       </div>
       <div class="form-field">
-        <label>Адрес ZCash</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Адрес ZCash" required>
+        </mat-form-field>
       </div>
       <div class="form-field">
-        <label>Фамилия</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Фамилия" required>
+        </mat-form-field>
       </div>
       <div class="form-field">
-        <label>Имя</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Имя" required>
+        </mat-form-field>
       </div>
       <div class="form-field">
-        <label>E-Mail</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="E-Mail" required>
+        </mat-form-field>
       </div>
       <div class="form-field">
-        <label>Телефон</label>
-        <input type="text" required>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Телефон" required>
+        </mat-form-field>
       </div>
-      <button type="submit">Отправить</button>
+      <button mat-raised-button color="primary" >  Отправить  </button>
     </div>
   </div>
 </div>

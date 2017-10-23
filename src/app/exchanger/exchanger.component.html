@@ -1,119 +1,105 @@
 <div class="content">
   <div class="exchange">
     <h1>
-      <img src="/assets/calculator.png">
       <span>
-        Обмен
-        <samp>{{givNameValut}}</samp>
-         на
-        <samp>{{getNameValut}}</samp>
-         по выгодному курсу
+        Обмен {{givNameValut}} на {{getNameValut}}
       </span>
     </h1>
     <table>
       <tbody>
       <tr>
-        <th>Отдаете</th>
         <td>
-          <select id="givSelect" (change)="setGivValut(give.value)" #give>
-            <option name="give" *ngFor="let curensy of curensys" value="{{curensy.name}}">{{curensy.name}}</option>
-          </select>
+          <mat-form-field>
+            <mat-select placeholder="Отдаете" [(ngModel)]="selectedgivValueValut"
+                        (change)="setGivValut(give.value)" #give>
+              <mat-option name="give" *ngFor="let curensy of curensys" [value]="curensy.name">
+                {{curensy.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </td>
-        <td><input [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)"
-                   placeholder="≥ 3 {{givNameValut}}" name="getV" type="number"/></td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="getV" (ngModelChange)="getValueMoney(getV)"
+                   placeholder="≥ 3 {{givNameValut}}" name="getV" type="number" required>
+          </mat-form-field>
+
+        </td>
         <td><img width="48" height="48" alt="" src="{{giveValutImg}}"/></td>
         <td rowspan="2">
-          <a (click)="switcher()"><img src="/assets/switch.png"/></a>
+          <a (click)="switcher()"><img height="36px" src="/assets/switch.png"/></a>
         </td>
       </tr>
 
       <tr>
-        <th>Получаете</th>
         <td>
-          <select id="getSelect" (change)="setGetValut(get.value)" #get>
-            <option *ngFor="let curensy of curensys" value="{{curensy.name}}" value="{{curensy.name}}">
-              {{curensy.name}}
-            </option>
-          </select>
+          <mat-form-field>
+            <mat-select placeholder="Получаете" [(ngModel)]="selectedgetValueValut"
+                        (change)="setGetValut(get.value)" #get>
+              <mat-option name="get" *ngFor="let curensy of curensys" [value]="curensy.name">
+                {{curensy.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </td>
 
-        <td><input placeholder="≥ 50 {{getNameValut}}" value="{{getValueM}}" pattern="[0-9]"/></td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="{{getNameValut}}" type="number" value="{{getValueM}}" required>
+          </mat-form-field>
+        </td>
         <td><img width="48" height="48" alt="" src="{{getValutImg}}" id="getMoney"/></td>
       </tr>
       </tbody>
     </table>
     <a *ngIf="buttonSwitch"
        href="/#/form?givNameValut={{givNameValut}}&getNameValut={{getNameValut}}&givValueM={{givValueM}}&getValueM={{getValueM}}">
-      <button type="submit" [ngClass]="{'style-on-field': true}">Обмен {{givNameValut}}
+      <button mat-raised-button color="primary" >Обмен {{givNameValut}}
         {{givValueM}} на {{getValueM}} {{getNameValut}}
       </button>
     </a>
-    <button *ngIf="!buttonSwitch" type="submit">Укажите сумму обмена</button>
-    <div class="form">
+    <button mat-button style="color: #525763" *ngIf="!buttonSwitch"> Укажите сумму обмена</button>
+      <div class="form">
       <div class="form-field">
         <img src="/assets/reserve.png">
         <img src="/assets/rate.png">
-        <img src="/assets/reverse_rate.png">
       </div>
       <div class="form-field">
         <label><strong>Резерв:</strong></label>
         <label><strong>Курс {{givNameValut}} к {{getNameValut}}:</strong></label>
-        <label><strong>Обр. курс:</strong></label>
       </div>
       <div class="form-field">
         <label>{{reservGetValut}} {{getNameValut}}</label>
         <label>1 {{givNameValut}} = {{currentRate}} {{getNameValut}}</label>
-        <label>1 {{getNameValut}} = {{reverseCourse}} {{givNameValut}}</label>
       </div>
     </div>
   </div>
   <div class="reserve">
-    <h1 style="color: white"><img src="/assets/reserves_header.png" style="vertical-align: middle;">Резервы</h1>
+    <h1 style="color: #3f51b5">Резервы</h1>
     <div class="exchange" style="background-color: white; box-shadow: 0 0 0 0;">
-      <table>
-        <tr>
-          <td></td>
-          <th>Валюта</th>
-          <th>Резерв</th>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/ZCash.png" class="small-img"></td>
-          <td>ZCash</td>
-          <td>4.16 ZEC</td>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/DASH.png" class="small-img"></td>
-          <td>DASH</td>
-          <td>0.21 DASH</td>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/Litecoin.png" class="small-img"></td>
-          <td>Лайткоин</td>
-          <td>0.01 LTC</td>
-        </tr>
-      </table>
-      <table>
-        <tr>
-          <td></td>
-          <th>Валюта</th>
-          <th>Резерв</th>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/ZCash.png" class="small-img"></td>
-          <td>ZCash</td>
-          <td>4.16 ZEC</td>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/DASH.png" class="small-img"></td>
-          <td>DASH</td>
-          <td>0.21 DASH</td>
-        </tr>
-        <tr>
-          <td><img src="https://utbs.ws/images/Litecoin.png" class="small-img"></td>
-          <td>Лайткоин</td>
-          <td>0.01 LTC</td>
-        </tr>
-      </table>
+      <div class="table-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Валюта </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Резерв </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.reserv}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <img class="small-img" src="{{element.symbolUrl}}"> </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+
     </div>
   </div>
 </div>

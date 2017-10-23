@@ -28,6 +28,7 @@ export class FormSendComponent implements OnInit {
 
   constructor(formService: FormExchangerService, private route: ActivatedRoute) {
     this.formService = formService;
+    this.formService.setExchangeB();
   }
 
   ngOnInit() {
@@ -42,6 +43,8 @@ export class FormSendComponent implements OnInit {
         this.getValueM = params['getValueM'];
       });
     this.initField();
+    this.givV = this.givValueM;
+    this.getV = this.getValueM;
   }
 
   initField() {
@@ -73,6 +76,7 @@ export class FormSendComponent implements OnInit {
   }
 
   getValueMoney(money: number) {
+    this.formService.setExchangeB();
     this.givValueM = money;
     let x;
     let rate = this.givNameValut + "_" + this.getNameValut;

@@ -11,29 +11,22 @@
   height: 100%;
   margin: 0 auto;
   padding: 20px 0;
-  border: 1px solid #ffbfa3;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 #e8f1f4;
 }
 
 .exchange-rates {
   width: 100%;
-  max-width: 800px;
-  margin: 20px auto 0;
-  border: 1px solid #ffbfa3;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 #e8f1f4;
+  max-width: 570px;
+  margin: 20px 0 0 20%;
 }
 
 .exchange-field {
-  background: url("/assets/calculator (1).png");
   width: 744px;
   height: 100%;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
-  border-radius: 10px;
+  border: 1px solid #8C9EFF;
 }
 
 .exchange-field img {
@@ -49,7 +42,7 @@ h1 {
   font-size: 32px;
   margin: 0;
   text-align: center;
-  color: #ff4e00;
+  color: #3f51b5;
 }
 
 p {
@@ -60,21 +53,26 @@ p {
   margin-left: 20px;
 }
 
-input {
-  width: 205px;
-  height: 33px;
-  border: 2px solid #c2dee7;
-  background: #c2dee7;
-  border-radius: 20px;
-  color: #636f7b;
-  font-size: 16px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+/*input {*/
+  /*width: 205px;*/
+  /*height: 33px;*/
+  /*border: 2px solid #c2dee7;*/
+  /*background: #c2dee7;*/
+  /*border-radius: 20px;*/
+  /*color: #636f7b;*/
+  /*font-size: 16px;*/
+  /*padding-left: 15px;*/
+  /*padding-right: 15px;*/
+/*}*/
 
-input:hover {
-  background-color: #ffffff;
-  color: #7e8791;
+/*input:hover {*/
+  /*background-color: #ffffff;*/
+  /*color: #7e8791;*/
+/*}*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .text {
@@ -88,20 +86,12 @@ input:hover {
 }
 
 button {
-  background: #525763;
-  border: none;
-  border-radius: 20px;
-  font-size: 18px;
-  color: #ffffff;
   margin-top: 10px;
-  padding: 10px 40px;
+  padding: 10px 20px;
   cursor: pointer;
   margin-left: 44%;
 }
 
-button:hover {
-  background-color: #ff4e00;
-}
 
 span {
   margin: 0 0 0 30px;
@@ -128,8 +118,10 @@ span {
 }
 
 .form-field > input {
-  width: calc(600px - 190px);
   vertical-align: middle;
+}
+.form-field mat-form-field{
+  display: inline;
 }
 
 .small-img {
